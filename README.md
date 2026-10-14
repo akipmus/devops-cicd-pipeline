@@ -59,26 +59,17 @@ Visit <http://localhost:5000/health>. Stop the container with **Ctrl+C**.
 
 The workflow at `.github/workflows/ci.yml` runs for pushes and pull requests. It installs Python dependencies, runs the tests, then builds the Docker image. It needs no cloud credentials or repository secrets.
 
-To publish this project to GitHub:
+To publish this already initialized local repository to GitHub:
 
 1. Create a repository named `devops-cicd-pipeline`. For the simplest Actions setup, make it public and leave the README initialization unchecked. Do not commit passwords, access tokens, or other secrets.
-2. In this folder, initialize Git and make the first commit:
-
-   ```powershell
-   git init
-   git add .
-   git commit -m "Initial DevOps project"
-   git branch -M main
-   ```
-
-3. Connect the new repository and push, replacing `YOUR_USERNAME` with your GitHub username:
+2. In this folder, add the new repository as `origin` and push the existing `main` branch, replacing `YOUR_USERNAME` with your GitHub username:
 
    ```powershell
    git remote add origin https://github.com/YOUR_USERNAME/devops-cicd-pipeline.git
    git push -u origin main
    ```
 
-4. Open the repository's **Actions** tab to see the workflow run.
+3. Open the repository's **Actions** tab to see the workflow run.
 
 If Git has not been configured on this computer, set your commit name and email first:
 
